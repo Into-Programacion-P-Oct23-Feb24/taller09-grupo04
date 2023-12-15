@@ -1,60 +1,59 @@
+package paquete02;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paquete02;
-
 /**
  *
  * @author reroes
  */
 public class Ejercicio01 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        // Declarar y generar arreglos en Java
+
+        // Se declara un arreglo de tipo double, llamado promedios
+        double[] promediosMateria1 = {8.1, 9, 9.5, 10, 9.9};
+        double[] promediosMateria2 = {7.9, 9.2, 9.7, 9.8, 9.7};
+        String[] estudiantes = {"Luis", "Ana", "Mónica", "José", "Juan"};
+        double[] promediosFinales = new double[5];
+
+        double sumaNotas; // = promediosMateria1[2] + promediosMateria2[2];
+        double promedio; // = sumaNotas / 2;
+        // promediosFinales[2] = promedio;
+
+        String mensajeFinal = ""; // variable que acumula un reporte final
+        // Se hace uso del ciclo repetitivo for para recorrer los arreglos
+        // y presentar los valore de las posiciones
+
+        for (int i = 0; i < promediosFinales.length; i++) {
+            // se suma el valor de la posición i del arreglo 
+            // promediosMateria1 y promediosMateria2
+            sumaNotas = promediosMateria1[i] + promediosMateria2[i];
+            // se obtiene el promedio de la suma de las notas
+            promedio = sumaNotas / 2;
+            // se asigna a la posición i del arreglo promediosFinales
+            promediosFinales[i] = promedio;
+        }
+
+        for (int i = 0; i < promediosMateria1.length; i++) {
+
+            mensajeFinal = String.format("%sEstudiante:%s materia 1: %.2f, "
+                    + "materia 2: %.2f. Promedio final: %.4f\n",
+                    mensajeFinal,
+                    estudiantes[i],
+                    promediosMateria1[i],
+                    promediosMateria2[i],
+                    promediosFinales[i]);
+        }
+
+        System.out.printf("%s\n", mensajeFinal);
         /*
-        String[] rangos =       {"1-5", "6-10", "11-15", "16-20"};
-        int[] valoresRangos =   {10,      20,     3,        1}    
-        */
-        int[] respuestas = {1, 10, 11, 12, 12, 13, 16, 17, 18, 8, 9, 10, 19, 20};
-        String[] rangos = {"1-5", "6-10", "11-15", "16-20"};
-        int[] valoresRangos = new int[4]; // {0, 0, 0, 0}
-        int respuesta;
         
-        for (int i = 0; i < respuestas.length; i++) { 
-            respuesta = respuestas[i]; 
-                    
-            if ((respuesta >= 1) || (respuesta <=5)){
-                valoresRangos[0] = valoresRangos[0] + 1;
-                
-            }else{
-                    
-                if ((respuesta >= 6) || (respuesta <=10)){
-                    valoresRangos[1] = valoresRangos[1] + 1;
-                }else{
-                            
-                    if ((respuesta >= 11) || (respuesta <=15)){
-                        valoresRangos[2] = valoresRangos[2] + 1; //3+1 
-                    }else{
-                        if ((respuesta >= 16) || (respuesta <=20)){
-                            valoresRangos[3] = valoresRangos[3] + 1;//1+1
-                        }
-                    
-                    }
-                }
-                
-            }
-        }
-        
-        
-        for (int i = 0; i < rangos.length; i++) {
-            System.out.printf("Rango %s - valor %d\n", rangos[i],
-                    valoresRangos[i]);
-        }
-        
+        Estudiante:Luis, materia 1: 8.10, materia 2: 7.9. Promedio final: 8,0000
+         */
     }
-    
+
 }

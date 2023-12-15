@@ -46,8 +46,15 @@ public class Ejercicio02 {
             }
         }
         for (int i = 0; i < rangos.length; i++) {
-            System.out.printf("Rango %s - valor %d\n", rangos[i],
+            if (i < rangos.length - 1) {
+                System.out.printf("Rango %s - valor %d\n", rangos[i],
+                        valoresRangos[i]);
+            }else{
+                if(i == rangos.length - 1){
+            System.out.printf("%s - valor %d\n", rangos[i],
                     valoresRangos[i]);
+            }
+            }
         }
 
     }
